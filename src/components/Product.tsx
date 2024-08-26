@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react';
 import contentfulClient from '../contentfullClient'; // Ensure correct path
 import { FaCirclePlus } from "react-icons/fa6";
 
+interface productProps{
+  addToCart : ()=> void;
+}
 
 type Product = {
   name:string;
@@ -14,7 +17,7 @@ type Product = {
   categories:string[];
 };
 
-const ProductComponent: React.FC = ()=> {
+const ProductComponent: React.FC<productProps> = ({addToCart})=> {
   const[products, setProducts] = useState <Product[]> ([]);
 
   useEffect(()=> {
@@ -60,7 +63,7 @@ const ProductComponent: React.FC = ()=> {
     
    
     <div className=' flex  justify-center items-center  w-20 bg-customBackground  rounded-tl-full h-14' >
-    <FaCirclePlus  className='size-7 ml-2 mt-3 text-neutral-900 cursor-pointer' />
+    <FaCirclePlus  className='size-7 ml-2 mt-3 text-neutral-900 cursor-pointer' onClick={addToCart} />
     </div>
  
 
