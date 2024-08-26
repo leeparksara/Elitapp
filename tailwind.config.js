@@ -8,10 +8,16 @@ module.exports = {
       colors: {
         customBackground: '#EDEDE9',
         customButton1: '#CBC6B8',
-        customButton2: '#898787',
+        arrow:'#F4DA50',
         navColors: '#818181',
         buttonHover:'#A59D89',
+        heroBackground: '#D9D9D9',
+        cta: '#E9AE55',
+        productBg: '#D9D9D9',
 
+      },
+      fontFamily: {
+        NotoSansKR: ['Noto Sans KR', 'serif'],
       },
     },
   },
