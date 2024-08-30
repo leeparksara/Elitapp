@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Hero from  '../components/Hero'
 import Product from '../components/Product'
 import NewCollectionComponent from '../components/NewCollection'
