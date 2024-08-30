@@ -1,22 +1,26 @@
 import React, {useState} from 'react'
-import Header from '../components/Header'
 import Hero from  '../components/Hero'
 import Product from '../components/Product'
-const Home:React.FC = ()=>{
+import NewCollectionComponent from '../components/NewCollection'
 
-const [cartValue, setCartValue] = useState(0);
+interface HomeProps{
+    addToCart: ()=> void;
+}
 
-const addToCart = () => {
-    setCartValue(cartValue +1);
-};
+const Home:React.FC<HomeProps>= ({addToCart})=>{
+
+
+
+
 
 
 
     return(
         <div >
-            <Header cartValue={cartValue} />
+
             <Hero/>
             <Product addToCart={addToCart } />
+            <NewCollectionComponent/>
         </div>
     )
 }

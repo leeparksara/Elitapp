@@ -12,7 +12,7 @@ module.exports = {
         navColors: '#818181',
         buttonHover:'#A59D89',
         heroBackground: '#D9D9D9',
-        cta: '#E9AE55',
+        cta: '#C5C0B5',
         productBg: '#D9D9D9',
 
       },
