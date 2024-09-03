@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Home from './pages/Home'
 import About from './pages/About'
+import Best from './pages/Best'
 import Layout from './components/Layout'
 import './App.css';
 
@@ -16,8 +17,9 @@ const [cartValue, setCartValue] = useState(0);
       <Routes>
       <Route path='/' element={<Layout cartValue={cartValue}/>}>
       <Route index element={<Home addToCart={addToCart} />}/>
-  
+
   <Route path="/about" element={<About/>}/>
+  <Route path="/best" element={<Best addToCart={addToCart}/>}/>
       </Route>
        
         

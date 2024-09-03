@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react';
 
 import contentfulClient from '../contentfullClient'; 
 
-
+import Breadcrumb from '../components/Breadcrumb';
 
 type designer = {
     url: string;
@@ -75,9 +75,13 @@ const [designers, setDesigners]= useState<Product[]>([]);
    },);
 
     return(
-        <div className='flex flex-col justify-center  mt-20 '>
+        <div className='flex flex-col justify-center  mt-28 mb-72'>
+            <div className='ml-[100px] mb-8'>
+            <  Breadcrumb  />
+            </div>
+         
 {aboutContents.map((product)=>(
-    <div className='flex flex-col justify-center items-center gap-8' key={product.slug}>
+    <div className='flex flex-col justify-center items-center gap-8 ' key={product.slug}>
         <p className="w-[800px] text-left font-normal text-balance leading-7 ml-14">{product.description}</p>
         <img src={product.image1} alt={product.name} className='w-[1000px] h-[550px]'/>
     </div>
@@ -110,7 +114,7 @@ const [designers, setDesigners]= useState<Product[]>([]);
     
 </div>
 <div className='flex flex-col justify-center items-center'>
-    <h1 className='text-2xl mt-16 mb-10'> Meet our designers</h1>
+    <h1 className='text-2xl mt-24 mb-10'> Meet our designers</h1>
 
     <div >
         {designers.map((product)=>(

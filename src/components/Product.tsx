@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import contentfulClient from '../contentfullClient'; // Ensure correct path
 import { FaCirclePlus } from 'react-icons/fa6';
+import { useNavigate } from 'react-router-dom';
+
 
 interface ProductProps {
   addToCart: () => void;
@@ -18,7 +20,10 @@ type Product = {
 
 const ProductComponent: React.FC<ProductProps> = ({ addToCart }) => {
   const [products, setProducts] = useState<Product[]>([]);
-
+  const navigate = useNavigate();
+const handleClick = ()=>{
+ navigate('/best')
+}
   useEffect(() => {
     contentfulClient
       .getEntries({
@@ -33,6 +38,7 @@ const ProductComponent: React.FC<ProductProps> = ({ addToCart }) => {
           image: item.fields.productImage?.fields?.file?.url || '',
           discount: item.fields.discount,
           categories: item.fields.categories || [],
+          
         }));
 
         // filter bestseller category only here
@@ -47,18 +53,18 @@ const ProductComponent: React.FC<ProductProps> = ({ addToCart }) => {
 
   return (
     <div className="pb-4">
-      <div className="flex justify-center mb-5 gap-[64rem] ">
+      <div className="flex justify-center mb-5 gap-[68rem] ">
         <h1 className="font-semibold text-lg text-neutral-800">Best seller</h1>
-        <p className="text-buttonHover cursor-pointer">View all</p>
+        <p className="text-buttonHover cursor-pointer" onClick={handleClick} >View all</p>
       </div>
 
-      <div className="flex justify-center gap-4 ">
+      <div className="flex justify-center gap-6 ">
         {products.map((product) => (
-          <div className="bg-neutral-200 rounded-lg " key={product.slug}>
+          <div className="bg-neutral-200 rounded-lg  " key={product.slug}>
             <img
               src={product.image}
               alt={product.name}
-              className="w-96 h-64 object-cover rounded-t-lg"
+              className="w-[400px] h-[300px] object-cover p-8 "
             />
             <div className="flex justify-between items-center">
               <p className="ml-16"> {product.name}</p>
