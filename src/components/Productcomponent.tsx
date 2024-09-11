@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 interface ProductProps {
-  addToCart: () => void;
+  addToCart: (product:Product) => void;
 }
 
 type Product = {
@@ -73,7 +73,7 @@ const handleClick = ()=>{
               <div className="flex justify-center items-center w-20 bg-customBackground rounded-tl-full h-14">
                 <FaCirclePlus
                   className="size-7 ml-2 mt-3 text-neutral-800 cursor-pointer"
-                  onClick={addToCart} // Call addToCart when the icon is clicked
+                  onClick={()=> addToCart(product)} // Call addToCart when the icon is clicked
                 />
               </div>
             </div>

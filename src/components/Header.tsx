@@ -1,16 +1,49 @@
-import React from 'react'
+
+import React, {useState} from 'react'
 import Cart from './Cart'
 //import Button from '../components/Button'
 import { CiSearch } from "react-icons/ci";
 
-
-import { Link } from 'react-router-dom';
-interface HeaderProps {
-  cartValue: number;
+import { Link, useNavigate } from 'react-router-dom';
+interface Product {
+  name: string;
+  slug: string;
+  price: number;
+  image: string;
+  categories: string[];
 }
 
-const Header:React.FC<HeaderProps> =({cartValue})=>{
+interface HeaderProps {
+  cartValue: number;
+  products: Product [];
+}
 
+
+const Header:React.FC<HeaderProps> =({cartValue, products})=>{
+
+ const [ searchTerm, setSearchTerm] = useState<string>('');
+ const [filterProducts, setFilterProducts] = useState<Product[]>([]);
+ const navigate = useNavigate();
+
+ const handleSearch = (e:React.ChangeEvent<HTMLInputElement>) =>{
+  const term = e.target.value.toLowerCase();
+  setSearchTerm(term);
+
+
+  if (term !== '') {
+    const filtered = products.filter(Product =>
+    Product.name.toLowerCase().includes(term)
+    );
+    setFilterProducts(filtered)
+  } else {
+    setFilterProducts([]);
+  }
+ }
+ const handleSearchSubmit = ()=> {
+  if(filterProducts.length > 0){
+    navigate('/search-results', {state: {result : filterProducts}})
+  }
+ }
 
     return(
         <>
@@ -19,8 +52,8 @@ const Header:React.FC<HeaderProps> =({cartValue})=>{
 <div className='flex items-center gap-28'>
 <h3 className='mx-20 '>EL</h3>
     <div className='relative flex items-center'>
-    <input typeof='text' placeholder='Search'   className="px-10 py-1.5 border rounded-md border-gray-300" />
-    <CiSearch className='absolute right-3 text-gray-500'  />
+    <input typeof='text' placeholder='Search'  value={searchTerm} onChange={handleSearch}  className="px-10 py-1.5 border rounded-md border-gray-300" />
+    <CiSearch className='absolute right-3 text-gray-500' onClick={handleSearchSubmit}  />
     </div>
 </div>
   

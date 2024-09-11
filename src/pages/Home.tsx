@@ -1,10 +1,10 @@
 import React from 'react'
 import Hero from  '../components/Hero'
-import Product from '../components/Product'
 import NewCollectionComponent from '../components/NewCollection'
-
+import ProductComponent from '../components/Productcomponent';
+import {Product} from '../types'
 interface HomeProps{
-    addToCart: ()=> void;
+    addToCart: (product:Product) => void;
 }
 
 const Home:React.FC<HomeProps>= ({addToCart})=>{
@@ -19,7 +19,7 @@ const Home:React.FC<HomeProps>= ({addToCart})=>{
         <div >
 
             <Hero/>
-            <Product addToCart={addToCart } />
+            <ProductComponent addToCart={addToCart } />
             <NewCollectionComponent/>
         </div>
     )
