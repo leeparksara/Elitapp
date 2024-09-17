@@ -23,7 +23,6 @@ type Product ={
    
 }
 const AboutPage:React.FC =() =>{
-
     const [aboutContents, setAboutContents]= useState <Product[]>([]);
 const [aboutContents2, setAboutContents2] = useState <Product[]> ([]);
 const [aboutContents3, setAboutContents3] = useState<Product[]>([]);

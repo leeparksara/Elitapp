@@ -9,7 +9,6 @@ import {Product} from '../types'
 interface layoutProps {
   cartValue :number;
   products: Product [];
-
 }
 const Layout:React.FC<layoutProps>= ({cartValue, products})=>{
   return(

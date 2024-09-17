@@ -4,6 +4,9 @@ import About from './pages/About';
 import Best from './pages/Best';
 import Layout from './components/Layout';
 import CartPage from './pages/CartPage';
+import Chairs from './pages/Chairs'
+import Sofas from './pages/Sofas'
+import Table from './pages/Table'
 import { Product } from './types';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -50,6 +53,10 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/best" element={<Best addToCart={addToCart} />} />
             <Route path="/cartpage" element={<CartPage cartItems={cartItems} removeFromCart={removeFromCart} />} />
+<Route path='/chairs' element={<Chairs addToCart={addToCart} />}/>
+<Route path='/sofas' element={<Sofas addToCart={addToCart}/>}/>
+<Route path='/table' element={<Table addToCart={addToCart}/>}/>
+
           </Route>
         </Routes>
       </div>
