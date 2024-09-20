@@ -64,9 +64,6 @@ const totalSum = totalPrice + vatAmount;
             </div>
               <h1 className='ml-[52px] mb-8 mt-12 text-xl text-gray-500 '> Your order</h1>
             <div className="flex justify-around items-start">
-                
-           
-          
             {cart.length === 0 ? (
                 <p className='-ml-[15.5rem]'>
                     Your cart is empty
@@ -74,10 +71,10 @@ const totalSum = totalPrice + vatAmount;
             ): (
                 <div className="flex flex-col items-center gap-8" >
                     {cart.map((item,index)=>(
-                        <div  key={index} className='bg-white flex items-center  w-[55rem]  h-[22rem]  justify-around gap-16   rounded-sm'>
+                        <div  key={index} className='bg-white flex items-center  w-[55rem]  h-[25rem]  justify-around gap-16   rounded-sm'>
                             <div className="flex  items-center gap-24 " >
                                 <div className='flex items-center gap-11'>
-                                <img src={item.image} alt={item.name} className="w-[350px] h-[500px]"/>
+                                <img src={item.image} alt={item.name} className="w-[300px] h-auto"/>
                                 <div className='flex flex-col gap-3 '>
                                     <p>{item.name}</p>
                                     

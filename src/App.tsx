@@ -10,7 +10,7 @@ import Table from './pages/Table'
 import { Product } from './types';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+import HeroProductPage from './pages/HeroProductPage';
 function App() {
   // Retrieve cart value from localStorage or initialize to 0
   const [cartValue, setCartValue] = useState<number>(() => {
@@ -56,7 +56,7 @@ function App() {
 <Route path='/chairs' element={<Chairs addToCart={addToCart} />}/>
 <Route path='/sofas' element={<Sofas addToCart={addToCart}/>}/>
 <Route path='/table' element={<Table addToCart={addToCart}/>}/>
-
+<Route path='/HeroProductPage' element={<HeroProductPage addToCart={addToCart}/>}/>
           </Route>
         </Routes>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import heroProduct from '../assets/863749-removebg-preview.png'
-
+import {Link} from 'react-router-dom'
 import { GoArrowUpRight } from "react-icons/go";
 
 import { RiDiscountPercentFill } from "react-icons/ri";
@@ -24,7 +24,8 @@ const Hero:React.FC = () =>{
 
 </div>
 <div className="flex flex-row top-4 relative gap-2">
-<button className='underline  underline-offset-4 ' type="button" title="Buy now"> Shop now</button>
+
+<Link className='underline  underline-offset-4 ' to="/HeroProductPage">Shop now</Link>
     <GoArrowUpRight />
   
 </div>
