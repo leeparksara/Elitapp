@@ -5,6 +5,7 @@ import Footer from './Footer'
 // importing Outlet to render the content of the pages 
 import { Outlet } from 'react-router-dom';
 import {Product} from '../types'
+import Delivery from './delivery';
 // passing the cartValue as props 
 interface layoutProps {
   cartValue :number;
@@ -17,6 +18,7 @@ const Layout:React.FC<layoutProps>= ({cartValue, products})=>{
       <main>
         <Outlet/>
       </main>
+      <Delivery/>
       <Footer/>
     </div>
   )

@@ -3,6 +3,7 @@ import Hero from  '../components/Hero'
 import NewCollectionComponent from '../components/NewCollection'
 import ProductComponent from '../components/Productcomponent';
 import {Product} from '../types'
+
 interface HomeProps{
     addToCart: (product:Product) => void;
 }
@@ -21,6 +22,7 @@ const Home:React.FC<HomeProps>= ({addToCart})=>{
             <Hero/>
             <ProductComponent addToCart={addToCart } />
             <NewCollectionComponent/>
+            
         </div>
     )
 }

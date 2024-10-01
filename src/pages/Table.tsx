@@ -55,8 +55,8 @@ const ChairPage:React.FC<ProductProps> = ({ addToCart }) =>{
   <div className='flex justify-center items-center'>
   <div className='grid grid-cols-3 gap-7 '>
     {chairs.map((product)=>(
-        <div key={product.slug} className='bg-neutral-200 rounded-lg w-[400px] cursor-pointer'>
-            <img  src={product.image}alt={product.name} className='w-[400px] h-[300px] object-cover p-8'
+        <div key={product.slug} className='bg-neutral-200 rounded-lg  cursor-pointer'>
+            <img  src={product.image}alt={product.name} className='w-[400px] h-[360px] object-cover p-8'
            onMouseOver={((e)=>{
             if(product.hoverImage){
                 (e.currentTarget as HTMLImageElement).src = product.hoverImage;

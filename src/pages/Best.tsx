@@ -26,7 +26,7 @@ const BestSellerPage: React.FC<ProductProps> = ({ addToCart }) => {
   const [bestSellerProducts, setBestSellerProducts] = useState<Product[]>([]);
 
   // Retrieving the data from contentful API
-  useEffect(() => {
+  useEffect(() => { 
     contentfulClient
       .getEntries({
         content_type: 'furnitureStore',

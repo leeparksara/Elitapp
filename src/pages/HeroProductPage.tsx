@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Link} from 'react-router-dom'
 import ContentFullClient from '../contentfullClient'
-
 import ImageModal from '../components/ImageModal';
 
 type Product = {
@@ -63,7 +61,7 @@ const HeroProductPage:React.FC<CartProps>=({addToCart})=>{
     }, [])
 
  return(
-    <div >
+    <div className='mt-16' >
 {heroProduct.map((saleProduct)=>(
     <div className='flex justify-center items-center gap-20' key={saleProduct.slug}>
 <div>
@@ -71,20 +69,20 @@ const HeroProductPage:React.FC<CartProps>=({addToCart})=>{
     <img className=' ' src={saleProduct.image} alt={saleProduct.name}/>
     </div>
 
-    <div className='flex justify-center items-center gap-4  h-[11rem]'>
+    <div className='flex justify-center items-center gap-4  h-[11rem] mt-3'>
 
-        <img   className='w-[6.5rem] h-[8.6] cursor-pointer' src={saleProduct.image2} alt={saleProduct.name} onClick={()=> openModal(saleProduct.image2)} />
-        <img  className='w-[6.5rem] h-[8.6rem] cursor-pointer' src={saleProduct.image3} alt={saleProduct.name} onClick={()=> openModal(saleProduct.image3)}/>
-      
-        <img className='w-[6.5rem] h-[8.6rem] cursor-pointer' src={saleProduct.image5} alt={saleProduct.name} onClick={()=> openModal(saleProduct.image5)}/> 
-        <img  className='w-6.5rem] h-[8.6rem] cursor-pointer' src={saleProduct.image4} alt={saleProduct.name} onClick={()=> openModal(saleProduct.image4)}/>
+        <img   className='w-[100px]  cursor-pointer' src={saleProduct.image2} alt={saleProduct.name} onClick={()=> openModal(saleProduct.image2)} />
+        <img  className='w-[100px]  cursor-pointer' src={saleProduct.image3} alt={saleProduct.name} onClick={()=> openModal(saleProduct.image3)}/>
+        <img  className='w-[100px]  cursor-pointer' src={saleProduct.image4} alt={saleProduct.name} onClick={()=> openModal(saleProduct.image4)}/>
+        <img className='w-[100px]  cursor-pointer' src={saleProduct.image5} alt={saleProduct.name} onClick={()=> openModal(saleProduct.image5)}/> 
+       
     </div>
 </div>
 <div className='flex flex-col gap-4'>
     <h1 className='font-semibold text-xl '>{saleProduct.name}</h1>
     <h2 className='text-lg font-medium'>$ {saleProduct.price}</h2>
     <p className='text-gray-500'> delivery: 5-6 days</p>
-    <p className='text-gray-500'>Size: 83cm X 50 cm</p>
+    <p className='text-gray-500'>Size: 100cm x 120cm x 140 cm</p>
     <h2 className='font-medium'>{saleProduct.name}</h2>
     <p className=' w-80'>Carly is a classic chair that adds minimal and luxury touch to your space  </p>
     <div>
