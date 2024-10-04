@@ -16,6 +16,7 @@ type Product = {
   image: string;
   discount?: number;
   categories: string[];
+  hoverImage: string;
 };
 
 const ProductComponent: React.FC<ProductProps> = ({ addToCart }) => {
@@ -37,6 +38,7 @@ const handleClick = ()=>{
           price: item.fields.price,
           image: item.fields.productImage?.fields?.file?.url || '',
           discount: item.fields.discount,
+          hoverImage: item.fields.productImage2?.fields?.file?.url || '',
           categories: item.fields.categories || [],
           
         }));
@@ -64,7 +66,16 @@ const handleClick = ()=>{
             <img
               src={product.image}
               alt={product.name}
-              className="w-[400px] h-[300px] object-cover p-8 "
+              className="w-[400px] h-[300px] object-cover p-8 cursor-pointer"
+
+           onMouseOver={(e)=>{
+            if(product.hoverImage){
+              (e.currentTarget as HTMLImageElement).src = product.hoverImage;
+            }
+           }}
+           onMouseOut={(e)=>{
+            (e.currentTarget as HTMLImageElement).src = product.image;
+           }}
             />
             <div className="flex justify-between items-center">
               <p className="ml-16"> {product.name}</p>
@@ -73,7 +84,7 @@ const handleClick = ()=>{
               <div className="flex justify-center items-center w-20 bg-customBackground rounded-tl-full h-14">
                 <FaCirclePlus
                   className="size-7 ml-2 mt-3 text-neutral-800 cursor-pointer"
-                  onClick={()=> addToCart(product)} // Call addToCart when the icon is clicked
+                  onClick={()=> addToCart(product)} 
                 />
               </div>
             </div>

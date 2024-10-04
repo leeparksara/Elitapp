@@ -84,9 +84,9 @@ useEffect(()=>{
 <button onClick={toggleDropdown} title="d" className='dropdown-button'>Catalog <IoIosArrowDown />
 </button>
 {isDropDownOpen && (
-  <div className='dropdown-menu'>
+  <div className='dropdown-menu '>
     <div className='mt-5 ml-5'>
-      <div>
+      <div >
       <Link to='/chairs'>Chair</Link>
 <Link to='/sofas'>Sofa</Link>
 <Link to='/table'>Table</Link>
@@ -103,14 +103,14 @@ useEffect(()=>{
   <div>
     {inspo.map((product) => (
       <div key={product.slug}>
-        <img src={product.image} alt={product.name} className='h-[280px] w-[420px] mr-8 ' />
+        <img src={product.image} alt={product.name} className='h-[280px] w-[350px] mr-8 ' />
     
       </div>
     ))}
  
 </div>
 <div className='flex items-center  -ml-[9px] mt-1 ' >
-<Link to='/inspo'  > Find inspo </Link>
+<Link to='/InspoSection'  > Find inspo </Link>
 <span>→</span>
 
 </div>

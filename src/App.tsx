@@ -7,6 +7,7 @@ import CartPage from './pages/CartPage';
 import Chairs from './pages/Chairs'
 import Sofas from './pages/Sofas'
 import Table from './pages/Table'
+import InspoSection from './pages/Inspo';
 import { Product } from './types';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -59,6 +60,7 @@ function App() {
 <Route path='/table' element={<Table addToCart={addToCart}/>}/>
 <Route path='/HeroProductPage' element={<HeroProductPage addToCart={addToCart}/>}/>
 <Route path='/deals' element={<Deals   />} />
+<Route path='/InspoSection' element={<InspoSection/>}/>
           </Route>
         </Routes>
       </div>

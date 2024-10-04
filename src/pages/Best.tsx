@@ -63,7 +63,7 @@ const BestSellerPage: React.FC<ProductProps> = ({ addToCart }) => {
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-[400px] h-[300px] object-cover p-8"
+                className="w-[400px] h-[300px] object-cover p-8 cursor-pointer"
                 onMouseOver={(e) => {
                   if (product.hoverImage) {
                     (e.currentTarget as HTMLImageElement).src = product.hoverImage;
