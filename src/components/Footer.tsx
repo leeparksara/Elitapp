@@ -9,7 +9,7 @@ import { GrFacebookOption } from "react-icons/gr";
 const Footer:React.FC = ()=>{
     return(
         <div>
- <div className='h-[250px] w-full bg-neutral-300 text-zinc-800 grid grid-flow-col grid-cols-subgrid gap-72 justify-center  mt-8 '>
+ <div className='h-[250px] w-full bg-neutral-100 text-zinc-800 grid grid-flow-col grid-cols-subgrid gap-72 justify-center  mt-8 '>
 <div className='flex flex-col justify-center items-center '>
     <img src={lamp} alt='lamp' className='size-[150px]' />
 <h3 className='mx-20 text-lg text-neutral-600'>EL</h3>
@@ -41,7 +41,7 @@ Be the first to receive information about new products, promotions and great off
 
         </div>
 
-<div className='w-full bg-neutral-400 flex justify-around h-10 items-center'>
+<div className='w-full bg-neutral-300 flex justify-around h-10 items-center'>
     <p> @ copyright 2024 Elite All Rights Reserved</p>
     <p>General Policy</p>
     <p>Terms & Conditions</p>

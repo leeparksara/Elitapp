@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import ContentFullClient from '../contentfullClient'
 import ImageModal from '../components/ImageModal';
+import SimilarProduct from '../components/SimiProducts';
+import Questions from '../components/Questions';
 
 type Product = {
 name: string;
@@ -62,6 +64,7 @@ const HeroProductPage:React.FC<CartProps>=({addToCart})=>{
 
  return(
     <div className='mt-16' >
+       
 {heroProduct.map((saleProduct)=>(
     <div className='flex justify-center items-center gap-20' key={saleProduct.slug}>
 <div>
@@ -90,9 +93,16 @@ const HeroProductPage:React.FC<CartProps>=({addToCart})=>{
     </div>
    
 </div>
+
+
     </div>
 ))}
-
+<div>
+<SimilarProduct/>
+</div>
+<div>
+    <Questions/>
+</div>
 {modalImage && <ImageModal image={modalImage} onClose={closeModal}/>}
     </div>
  )

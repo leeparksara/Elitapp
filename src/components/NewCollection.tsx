@@ -8,6 +8,9 @@ type Collection = {
   description: string;
  
 };
+interface HomeProps{
+    addToCart: (product:Product) => void;
+}
 
 type Product = {
   name: string;
@@ -15,13 +18,16 @@ type Product = {
   price: number;
   description: string;
   categories: string[];
-  collections: Collection[]; 
+ collections: Collection[]; 
+  image: string;
   colDim: string;
+
   coldMaterial:string;
   coldMaterial2:string; // Assuming this contains the images from `newCollectionSection`
 };
 
-const NewCollectionComponent: React.FC = () => {
+
+const NewCollectionComponent: React.FC<HomeProps> = ({addToCart}) => {
   const [newCollection, setNewCollection] = useState<Product[]>([]);
   const [selectedColorIndexes, setSelectedColorIndexes] = useState<number[]>([]);
 
@@ -36,11 +42,13 @@ const NewCollectionComponent: React.FC = () => {
           slug: item.fields.slug,
           description: item.fields.description,
           price: item.fields.price,
+
           categories: item.fields.categories || [],
           colDim:item.fields.colDim,
           coldMaterial: item.fields.coldMaterial,
           coldMaterial2: item.fields.coldMaterial2,
-          collections: item.fields.newCollectionSection?.map((collection: any) => ({
+          image: item.fields.productIamge?.fields?.file.url || '',
+         collections: item.fields.newCollectionSection?.map((collection: any) => ({
             url: collection.fields.file.url,
             description: collection.fields.description,
           
@@ -97,7 +105,7 @@ const NewCollectionComponent: React.FC = () => {
                 />
                
               ))}
-          
+
             </div>
 </div>
 
@@ -115,13 +123,17 @@ const NewCollectionComponent: React.FC = () => {
 <div>
     <h2 className='text-neutral-700'>Demisions:</h2>
     <p>{product.colDim}</p>
+    <div className='bg-zinc-800  h-16 w-44 text-white rounded-sms mt-8 text-center  '>
+    <button                 onClick={() => addToCart(product)}  className='text-xl p-4'  > Buy</button>
+    </div>
+    
 </div>
 
             </div>
             </div>
 
 
-            {/* Color palette */}
+         
            
             
           </div>

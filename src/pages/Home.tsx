@@ -17,11 +17,16 @@ const Home:React.FC<HomeProps>= ({addToCart})=>{
 
 
     return(
-        <div >
+        <div className='container mx-auto px-4' >
 
             <Hero/>
+            <section className='my-8'>
             <ProductComponent addToCart={addToCart } />
-            <NewCollectionComponent/>
+            </section>
+       <section className='my-8'>
+       <NewCollectionComponent addToCart={addToCart}/>
+       </section>
+           
             
         </div>
     )

@@ -71,7 +71,6 @@ const Deals: React.FC = () => {
   const nextSlide = () => {
     setDealsCurrentSlide(prev => (prev + 1) % Math.ceil(dealProducts.length / numberOfImages));
   };
-
   const prevSlide = () => {
     setDealsCurrentSlide(prev => (prev - 1 + Math.ceil(dealProducts.length / numberOfImages)) % Math.ceil(dealProducts.length / numberOfImages));
   };
@@ -79,12 +78,7 @@ const Deals: React.FC = () => {
   // Calculate the current set of products to display
   const currentProducts = dealProducts.slice(dealSlide * numberOfImages, dealSlide * numberOfImages + numberOfImages);
 
-  // Debugging: Log current state
-  console.log("Current Slide:", dealSlide);
-  console.log("Current Products:", currentProducts);
-  console.log("All Products:", dealProducts);
-  console.log("Total Slides:", Math.ceil(dealProducts.length / numberOfImages));
-
+ 
   return (
     <div>
       {deals.map((dealsProduct) => (
@@ -101,8 +95,8 @@ const Deals: React.FC = () => {
       ))}
 
       <div className='flex justify-between mb-60 w-full overflow-hidden relative'>
-        <button title='previous' onClick={prevSlide}
-          className="absolute left-0 p-2 top-[60%] transform -translate-y-1/2 bg-white rounded-full z-10">
+        <button title='previous' onClick={prevSlide} 
+          className="absolute left-0 p-2 top-[60%] transform -translate-y-1/2 bg-white rounded-full z-10  text-zinc-500">
           <IoIosArrowRoundBack size={35} className='transition-transform duration-200 ease-in-out hover:translate-x-2' />
         </button>
 
@@ -119,10 +113,11 @@ const Deals: React.FC = () => {
         ))}
 
         <button title='next' onClick={nextSlide}
-          className="absolute right-0 p-2 top-[60%] transform -translate-y-1/2 bg-white rounded-full z-10">
+          className="absolute right-0 p-2 top-[60%] transform -translate-y-1/2 bg-white rounded-full z-10  text-zinc-500">
           <IoIosArrowRoundForward size={35} className='transition-transform duration-200 ease-in-out hover:translate-x-2' />
         </button>
       </div>
+    
     </div>
   );
 };
