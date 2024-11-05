@@ -41,7 +41,7 @@ Be the first to receive information about new products, promotions and great off
 
         </div>
 
-<div className='w-full bg-neutral-300 sm:flex sm:justify-around sm:h-10  sm:items-center h-28 flex flex-col-reverse justify-center items-center gap-2 '>
+<div className='w-full bg-neutral-300 sm:flex sm:flex-row sm:justify-around sm:h-10  sm:items-center h-28 flex flex-col-reverse justify-center items-center gap-2 '>
     <p> @ copyright 2024 Elite All Rights Reserved</p>
     <p>General Policy</p>
     <p>Terms & Conditions</p>

@@ -66,7 +66,7 @@ useEffect(()=>{
     return(
         <>
  
-  <header className='sm:flex sm:items-center sm:justify-between sm:p-4 flex justify-center items-center '>
+  <header className='sm:flex sm:items-center sm:justify-between sm:p-4 flex justify-center items-center'>
 <div className='flex items-center gap-4 lg:gap-28 w-full'>
 <h3 className='tex-lg font-bold mx-4 '>EL</h3>
     
@@ -82,13 +82,13 @@ useEffect(()=>{
 
 
         {/* small screen view */}
-        <div className='dropdown-container  sm:flex-col '>
-<button onClick={toggleDropdown} title="d" className='dropdown-button ml-[150px]'>Catalog <IoIosArrowDown />
+        <div className='dropdown-container  hidden sm:flex '>
+<button onClick={toggleDropdown} title="d" className='dropdown-button ml-[150px] '>Catalog <IoIosArrowDown />
 </button>
 {isDropDownOpen && (
-  <div className='  dropdown-menu '>
+  <div className=' dropdown-menu  '>
     <div className='mt-2 flex flex-col '>
-      <div >
+      <div  >
       <Link to='/chairs'>Chair</Link>
 <Link to='/sofas'>Sofa</Link>
 <Link to='/table'>Table</Link>
@@ -158,17 +158,47 @@ useEffect(()=>{
 
             <button onClick={toggleDropdown} className='flex items-center space-x-1 mt-4'> <span>Catalog</span> <IoIosArrowDown/></button>
             {isDropDownOpen && (
-              <div className='ml-4'>
-<div>
+              <div className='m-0 bg-zinc-100 p-4'>
+ <div className='dropdown-container  visible flex '>
 
-<Link to='/chairs' className="block py-1">
-Chair
-</Link>
+{isDropDownOpen && (
+  <div className=' flex  justify-center  gap-20'>
+    <div className='mt-2 flex flex-col '>
+      <div className='flex flex-col gap-4' >
+      <Link to='/chairs'>Chair</Link>
+<Link to='/sofas'>Sofa</Link>
+<Link to='/table'>Table</Link>
+      </div>
+  <div className='deals mt-3'>
+    <Link to='/deals' >Deals</Link>
+  </div>
+    </div>
 
-<Link to="/table" className='block py-1'>Table</Link>
+<div className='mt-4'>
+  <h1 className='font-semibold text-lg mb-3 '>Inspiration</h1>
 
-<Link to='/deals'>Deals</Link>
+
+  <div>
+    {inspo.map((product) => (
+      <div key={product.slug}>
+        <img src={product.image} alt={product.name} className=' h-[250px] w-full mr-0 sm:h-[300px]  sm:w-full sm:mr-24  ' />
+    
+      </div>
+    ))}
+ 
 </div>
+<div className='flex items-center   mt-1 ' >
+<Link to='/InspoSection'> Find inspo </Link>
+<span>→</span>
+
+</div>
+
+</div>
+
+  </div>
+)}
+        </div>
+       
               </div>
               
             )}
