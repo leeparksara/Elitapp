@@ -9,10 +9,10 @@ import { GrFacebookOption } from "react-icons/gr";
 const Footer:React.FC = ()=>{
     return(
         <div>
- <div className='h-[250px] w-full bg-neutral-100 text-zinc-800 grid grid-flow-col grid-cols-subgrid gap-72 justify-center  mt-8 '>
-<div className='flex flex-col justify-center items-center '>
+ <div className='sm:h-[250px] w-full bg-neutral-100 text-zinc-800 sm:grid sm:grid-flow-col  sm:gap-72 sm:items-center   mt-8 grid justify-center'>
+<div className='sm:flex sm:flex-col justify-center items-center'>
     <img src={lamp} alt='lamp' className='size-[150px]' />
-<h3 className='mx-20 text-lg text-neutral-600'>EL</h3>
+<h3 className=' text-lg text-neutral-600 mt-6'>EL</h3>
 <p> modern-elite-interiors</p>
 </div>
 <div>
@@ -29,7 +29,7 @@ Be the first to receive information about new products, promotions and great off
 </div>
 
 
-<div className='flex flex-col justify-start items-center mt-8' >
+<div className='sm:flex flex-col justify-start items-center mt-10 mb-14' >
     <h2 className='w-20 mb-5'>Follow us</h2>
     <div className='flex gap-3'>
     <FaInstagram className='size-7 text-neutral-700 cursor-pointer' />
@@ -41,7 +41,7 @@ Be the first to receive information about new products, promotions and great off
 
         </div>
 
-<div className='w-full bg-neutral-300 flex justify-around h-10 items-center'>
+<div className='w-full bg-neutral-300 sm:flex sm:justify-around sm:h-10  sm:items-center h-28 flex flex-col-reverse justify-center items-center gap-2 '>
     <p> @ copyright 2024 Elite All Rights Reserved</p>
     <p>General Policy</p>
     <p>Terms & Conditions</p>

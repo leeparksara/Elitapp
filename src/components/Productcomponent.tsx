@@ -3,9 +3,8 @@ import contentfulClient from '../contentfullClient'; // Ensure correct path
 import { FaCirclePlus } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
 
-
 interface ProductProps {
-  addToCart: (product:Product) => void;
+  addToCart: (product: Product) => void;
 }
 
 type Product = {
@@ -22,9 +21,11 @@ type Product = {
 const ProductComponent: React.FC<ProductProps> = ({ addToCart }) => {
   const [products, setProducts] = useState<Product[]>([]);
   const navigate = useNavigate();
-const handleClick = ()=>{
- navigate('/best')
-}
+
+  const handleClick = () => {
+    navigate('/best');
+  };
+
   useEffect(() => {
     contentfulClient
       .getEntries({
@@ -40,7 +41,6 @@ const handleClick = ()=>{
           discount: item.fields.discount,
           hoverImage: item.fields.productImage2?.fields?.file?.url || '',
           categories: item.fields.categories || [],
-          
         }));
 
         // filter bestseller category only here
@@ -55,36 +55,34 @@ const handleClick = ()=>{
 
   return (
     <div className="pb-4">
-      <div className="flex justify-center mb-5 gap-[68rem] ">
+      <div className="flex flex-col sm:flex-row justify-center mb-5 gap-4 sm:gap-[68rem]">
         <h1 className="font-semibold text-lg text-neutral-800">Best seller</h1>
-        <p className="text-buttonHover cursor-pointer" onClick={handleClick} >View all</p>
+        <p className="text-buttonHover cursor-pointer" onClick={handleClick}>View all</p>
       </div>
 
-      <div className="flex justify-center gap-6 ">
+      <div className="flex flex-col sm:flex-row justify-center gap-6 flex-wrap">
         {products.map((product) => (
-          <div className="bg-neutral-200 rounded-lg  " key={product.slug}>
+          <div className="bg-neutral-200 rounded-lg p-4 w-full sm:w-80 md:w-72 lg:w-96" key={product.slug}>
             <img
               src={product.image}
               alt={product.name}
-              className="w-[400px] h-[300px] object-cover p-8 cursor-pointer"
-
-           onMouseOver={(e)=>{
-            if(product.hoverImage){
-              (e.currentTarget as HTMLImageElement).src = product.hoverImage;
-            }
-           }}
-           onMouseOut={(e)=>{
-            (e.currentTarget as HTMLImageElement).src = product.image;
-           }}
+              className="w-full h-[300px] object-cover cursor-pointer rounded-lg"
+              onMouseOver={(e) => {
+                if (product.hoverImage) {
+                  (e.currentTarget as HTMLImageElement).src = product.hoverImage;
+                }
+              }}
+              onMouseOut={(e) => {
+                (e.currentTarget as HTMLImageElement).src = product.image;
+              }}
             />
-            <div className="flex justify-between items-center">
-              <p className="ml-16"> {product.name}</p>
-              <p> ${product.price} </p>
-
-              <div className="flex justify-center items-center w-20 bg-customBackground rounded-tl-full h-14">
+            <div className="flex justify-between items-center mt-2">
+              <p className="ml-2 text-sm sm:text-base"> {product.name}</p>
+              <p className="text-sm sm:text-base">${product.price}</p>
+              <div className="flex justify-center items-center w-10 h-10 bg-customBackground rounded-full">
                 <FaCirclePlus
-                  className="size-7 ml-2 mt-3 text-neutral-800 cursor-pointer"
-                  onClick={()=> addToCart(product)} 
+                  className="text-neutral-800 cursor-pointer"
+                  onClick={() => addToCart(product)}
                 />
               </div>
             </div>

@@ -11,12 +11,12 @@ interface cartProps {
 const Cart: React.FC<cartProps>=({cartValue}) =>{
 
      return(
-        <div className='mr-6'>
+        <div className='  sm:mr-[45px] flex  '>
                  <Link to='/cartpage'>
                
-        <BsCart3 className=' cursor-pointer  size-6 text-neutral-600 ' />
+        <BsCart3 className=' cursor-pointer  size-6 text-neutral-600 ml-[-50px]' />
         {cartValue> 0 && (
-<span className=' absolute right-6 -top-[-2px] w-6 rounded-full flex justify-center items-center  bg-neutral-200'>
+<span className='absolute  sm:absolute right-8 sm:right-16 -top-[-2px] w-6 rounded-full flex justify-center items-center  bg-neutral-200'>
 {cartValue}
 </span>
         )}

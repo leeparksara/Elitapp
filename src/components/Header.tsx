@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+ import React, {useState, useEffect} from 'react'
 import Cart from './Cart'
 import { IoIosArrowDown } from "react-icons/io";
 //import Button from '../components/Button'
@@ -27,17 +27,20 @@ const Header:React.FC<HeaderProps> =({cartValue, products})=>{
  const location = useLocation();
 const [isDropDownOpen, setIsDropDownOpen] = useState(false);
 const [inspo, setInspo] = useState<InspoProduct[]>([]);
+const [ismobileMenuopen, setIsMobileMenuOpen] = useState(false);
 
 const toggleDropdown = () => {
   setIsDropDownOpen(prev => !prev);
 };
 
-
+const toggleMobileMenu = ()=>{
+  setIsMobileMenuOpen (prev => !prev);
+};
 
 
  useEffect(()=>{
 setIsDropDownOpen(false)
- }, [location.pathname]);
+ }, [location.pathname]);             
 
 useEffect(()=>{
   contentfulClient.getEntries({
@@ -63,29 +66,28 @@ useEffect(()=>{
     return(
         <>
  
-  <header className='flex items-center justify-between p-4'>
-<div className='flex items-center gap-28'>
-<h3 className='mx-20 '>EL</h3>
-    <div className='relative flex items-center'>
-    <input typeof='text' placeholder='Search'    className="px-10 py-1.5 border rounded-md border-gray-300" />
-    <CiSearch className='absolute right-3 text-gray-500'   />
-    </div>
+  <header className='sm:flex sm:items-center sm:justify-between sm:p-4 flex justify-center items-center '>
+<div className='flex items-center gap-4 lg:gap-28 w-full'>
+<h3 className='tex-lg font-bold mx-4 '>EL</h3>
+    
 </div>
   
-<div className='flex items-center gap-28 justify-center '>
+<div className=' flex items-center gap-28 justify-center '>
 
- <nav className="flex space-x-4 gap-6">
+ <nav className="  hidden sm:flex space-x-4 gap-6 ">
           <Link to="/" className="text-navColors hover:text-gray-900">Home</Link>
           <Link to="/about" className="text-navColors hover:text-gray-900">About</Link>
           <Link to="/contact" className="text-navColors hover:text-gray-900">Contact</Link>
-
         </nav>
-        <div className='dropdown-container'>
-<button onClick={toggleDropdown} title="d" className='dropdown-button'>Catalog <IoIosArrowDown />
+
+
+        {/* small screen view */}
+        <div className='dropdown-container  sm:flex-col '>
+<button onClick={toggleDropdown} title="d" className='dropdown-button ml-[150px]'>Catalog <IoIosArrowDown />
 </button>
 {isDropDownOpen && (
-  <div className='dropdown-menu '>
-    <div className='mt-5 ml-5'>
+  <div className='  dropdown-menu '>
+    <div className='mt-2 flex flex-col '>
       <div >
       <Link to='/chairs'>Chair</Link>
 <Link to='/sofas'>Sofa</Link>
@@ -96,21 +98,21 @@ useEffect(()=>{
   </div>
     </div>
 
-<div className='mt-5'>
+<div className='mt-4'>
   <h1 className='font-semibold text-lg mb-3 '>Inspiration</h1>
 
 
   <div>
     {inspo.map((product) => (
       <div key={product.slug}>
-        <img src={product.image} alt={product.name} className='h-[280px] w-[350px] mr-8 ' />
+        <img src={product.image} alt={product.name} className=' h-[200px] w-full mr-0 sm:h-[300px]  sm:w-full sm:mr-24 ' />
     
       </div>
     ))}
  
 </div>
 <div className='flex items-center  -ml-[9px] mt-1 ' >
-<Link to='/InspoSection'  > Find inspo </Link>
+<Link to='/InspoSection'> Find inspo </Link>
 <span>→</span>
 
 </div>
@@ -120,17 +122,61 @@ useEffect(()=>{
   </div>
 )}
         </div>
-        <div>
-          <div className=''>
+       
+        <div className=' flex items-center sm:flex sm:items-center sm:gap-2 '>
           <Cart cartValue={cartValue} />
-          </div>
-      
+          <button onClick={toggleMobileMenu} className='text-3xl sm:hidden text-zinc-600'> ☰</button>
+
         </div>
 
 
 </div>
   </header>
-  
+  <div className=' w-[400px] sm:mt-[-55px] sm:ml-[100px] sm:w-[440px] flex justify-center my-4 items-center' >
+        <div className='relative w-full px-4'>
+          <input
+            type='text'
+            placeholder='Search'
+            className='px-4 py-2 border rounded-md border-gray-300 w-full'
+          />
+          <CiSearch className='absolute right-5 top-3 text-gray-500' />
+        </div>
+      </div>
+  {/*burger menu display when its clicked */}
+
+  {ismobileMenuopen && (
+    <div className='sm:hidden bg-white shadow-md p-4'>
+      <nav className='flex flex-col space-y-2'>
+        <Link to='/' className="text-navColors hover:text-gray-900">
+        Home</Link>
+        <Link to="/about" className="text-navColors hover:text-gray-900">
+              About
+            </Link>
+            <Link to="/contact" className="text-navColors hover:text-gray-900">
+              Contact
+            </Link>
+
+            <button onClick={toggleDropdown} className='flex items-center space-x-1 mt-4'> <span>Catalog</span> <IoIosArrowDown/></button>
+            {isDropDownOpen && (
+              <div className='ml-4'>
+<div>
+
+<Link to='/chairs' className="block py-1">
+Chair
+</Link>
+
+<Link to="/table" className='block py-1'>Table</Link>
+
+<Link to='/deals'>Deals</Link>
+</div>
+              </div>
+              
+            )}
+      </nav>
+
+    </div>
+  )}
+
        
         </>
     )
