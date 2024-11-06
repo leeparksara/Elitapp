@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-col mt-10 sm:mt-32 text-start sm:items-start ">
+      <div className="flex flex-col mt-10 sm:mt-0 text-start sm:items-start ">
         <h3 className="text-4xl sm:text-5xl text-neutral-600 mb-3">Elite</h3>
         <p className="text-3xl sm:text-6xl text-neutral-600 mb-5">Your Home</p>
         <p className="text-lg sm:text-xl text-start sm:text-left w-72 sm:w-96 text-neutral-600">

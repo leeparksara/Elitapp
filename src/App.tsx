@@ -7,6 +7,7 @@ import CartPage from './pages/CartPage';
 import Chairs from './pages/Chairs'
 import Sofas from './pages/Sofas'
 import Table from './pages/Table'
+import Contact from './pages/Contact'
 import InspoSection from './pages/Inspo';
 import { Product } from './types';
 import './App.css';
@@ -53,6 +54,7 @@ function App() {
           <Route path="/" element={<Layout products={cartItems} cartValue={cartValue} />}>
             <Route index element={<Home addToCart={addToCart} />} />
             <Route path="/about" element={<About />} />
+            <Route path='/contact' element={<Contact/>}/>
             <Route path="/best" element={<Best addToCart={addToCart} />} />
             <Route path="/cartpage" element={<CartPage cartItems={cartItems} removeFromCart={removeFromCart} />} />
 <Route path='/chairs' element={<Chairs addToCart={addToCart} />}/>

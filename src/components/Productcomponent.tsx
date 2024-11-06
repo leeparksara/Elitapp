@@ -55,9 +55,9 @@ const ProductComponent: React.FC<ProductProps> = ({ addToCart }) => {
 
   return (
     <div className="pb-4">
-      <div className="flex flex-col sm:flex-row justify-center mb-5 gap-4 sm:gap-[68rem]">
-        <h1 className="font-semibold text-lg text-neutral-800">Best seller</h1>
-        <p className="text-buttonHover cursor-pointer" onClick={handleClick}>View all</p>
+      <div className="flex  sm:flex-row justify-around gap-[180px] mb-5  sm:gap-[64rem] ">
+        <h1 className="font-semibold text-lg text-neutral-800 w-full ">Best seller</h1>
+        <p className="text-buttonHover cursor-pointer w-full " onClick={handleClick}>View all</p>
       </div>
 
       <div className="flex flex-col sm:flex-row justify-center gap-6 flex-wrap">

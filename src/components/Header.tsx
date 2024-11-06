@@ -68,7 +68,11 @@ useEffect(()=>{
  
   <header className='sm:flex sm:items-center sm:justify-between sm:p-4 flex justify-center items-center'>
 <div className='flex items-center gap-4 lg:gap-28 w-full'>
-<h3 className='tex-lg font-bold mx-4 '>EL</h3>
+
+  <Link className='tex-lg font-bold mx-4 my-4 ' to='/'>
+  EL
+  </Link>
+
     
 </div>
   
@@ -132,7 +136,7 @@ useEffect(()=>{
 
 </div>
   </header>
-  <div className=' w-[400px] sm:mt-[-55px] sm:ml-[100px] sm:w-[440px] flex justify-center my-4 items-center' >
+  <div className=' sm:w-[400px] sm:mt-[-40px] sm:ml-[100px] w-full flex justify-center my-8 items-center ' >
         <div className='relative w-full px-4'>
           <input
             type='text'
@@ -162,7 +166,7 @@ useEffect(()=>{
  <div className='dropdown-container  visible flex '>
 
 {isDropDownOpen && (
-  <div className=' flex  justify-center  gap-20'>
+  <div className=' flex  justify-center  gap-20 '>
     <div className='mt-2 flex flex-col '>
       <div className='flex flex-col gap-4' >
       <Link to='/chairs'>Chair</Link>

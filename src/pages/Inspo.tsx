@@ -40,23 +40,23 @@ const InspoSection:React.FC =()=>{
    })
     return(
     <div  >
-        <div className='ml-[82px] '>
+        <div className='ml-[0px] '>
         <Breadcrumb/>
         <h1 className='font-semibold text-xl mb-7 mt-8'>Styled by our customers</h1>
         </div>
 
         
 
-<div className='flex justify-center items-center mb-44'>
+<div className='sm:flex justify-center items-center mb-44'>
 {inspo.map((product)=>(
     <div key={product.slug}>
-        <div className='grid grid-cols-3 gap-3 w-[80rem]  '>
+        <div className='sm:grid sm:grid-cols-3 sm:gap-3 sm:w-[80rem]  flex flex-col gap-5 '>
         <img className='w-[30rem]' src={product.image} alt={product.name} />
         <img className='w-[30rem]' src={product.inspoImage2} alt={product.name}/>
         <img className='w-[30rem]' src={product.inspoImage3} alt={product.name}/>
         <img className='w-[30rem]' src={product.inspoImage4} alt={product.name}/>
         <img className='w-[30rem]' src={product.inspoImage5} alt={product.name}/>
-        <div className='flex flex-col  items-center text-center rounded-sm border-2 border-zinc-300 h-[34.6rem] -mt-[8.5rem] gap-5 border-b-0'>
+        <div className='flex flex-col  items-center text-center rounded-sm border-2 border-zinc-300 sm:h-[34.6rem] sm:-mt-[8.5rem]  pb-5 gap-5 border-b-0'>
            <h1 className='font-semibold text-3xl mt-7'>Find inspiration!</h1>
            <p className='w-[20rem] text-center'>We'd love to see how you style our furniture in your home. Share your unique setups on Instagram with the hashtag #Elite, and your space could be featured right here on our website!
            </p>
