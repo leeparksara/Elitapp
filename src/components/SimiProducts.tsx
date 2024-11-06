@@ -54,18 +54,18 @@ const currentSlide = simProduct.slice(simSlide * numberOfSlides, simSlide * numb
     return(
     <div>
 <div>
-<h1 className='font-semibold ml-16 mt-16'>Similar products</h1>
-<div className='flex justify-center items-center mt-16 gap-4 '>
+<h1 className='font-semibold sm:ml-16 mt-16'>Similar products</h1>
+<div className='sm:flex justify-center items-center mt-16 flex flex-row gap-3 '>
 <button title='previous' onClick={prevSlide} 
-          className=" bg-white rounded-full z-10  text-zinc-500 p-2 ">
-          <IoIosArrowRoundBack size={35} className='transition-transform duration-200 ease-in-out hover:translate-x-2' />
+          className=" bg-white rounded-full z-10  text-zinc-500 sm:p-2 ">
+          <IoIosArrowRoundBack size={26} className='transition-transform duration-200 ease-in-out hover:translate-x-2' />
         </button>
 
 {currentSlide.map((product)=>(
               <div  key={product.slug}>
           
-            <div className='grid font-medium text-lg '>
-  <img className='w-[380px] ' src={product.image} alt={product.name}/>
+            <div className='sm:grid font-medium sm:text-lg  '>
+  <img className='w-[380px]' src={product.image} alt={product.name}/>
 <p >{product.name}</p>
 <p>{product.price} $</p>
             </div>
@@ -75,8 +75,8 @@ const currentSlide = simProduct.slice(simSlide * numberOfSlides, simSlide * numb
       
     ))}
 <button title='next' onClick={nextSlide}
-          className=" bg-white rounded-full z-10 text-zinc-500 p-2">
-          <IoIosArrowRoundForward size={35} className='transition-transform duration-200 ease-in-out hover:translate-x-2' />
+          className=" bg-white rounded-full z-10 text-zinc-500 sm:p-2">
+          <IoIosArrowRoundForward size={26} className='transition-transform duration-200 ease-in-out hover:translate-x-2' />
         </button>
       
 </div>

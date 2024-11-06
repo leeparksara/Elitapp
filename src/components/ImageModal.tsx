@@ -18,7 +18,7 @@ x
 
 <div className='relative'>
     
-    <img src={image} alt='product' className='w-[28rem] h-[35rem] max-w-3xl'/>
+    <img src={image} alt='product' className='w-[28rem] h-[35rem] max-w-3xl '/>
 </div>
         </div>
         </>

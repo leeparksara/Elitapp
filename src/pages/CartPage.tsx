@@ -58,24 +58,24 @@ const vatAmount = totalPrice * 0.25;
 const totalSum = totalPrice + vatAmount;
 
     return(
-        <div className=' mb-36'>
-              <div className='ml-[52px]  mt-10'>
+        <div className=' mb-36 '>
+              <div className='ml-[0px]  mt-10'>
             <  Breadcrumb  />
             </div>
-              <h1 className='ml-[52px] mb-8 mt-12 text-xl text-gray-500 '> Your order</h1>
-            <div className="flex justify-around items-start">
+              <h1 className='ml-[0px] mb-8 mt-12 text-xl text-gray-500 '> Your order</h1>
+            <div className="sm:flex sm:flex-row flex flex-col justify-start items-start gap-4 sm:justify-around sm:items-start">
             {cart.length === 0 ? (
-                <p className='-ml-[15.5rem]'>
-                    Your cart is empty
-                </p>
+                <p className='sm:-ml-[15.4rem]'>
+                   Your cart is empty
+                </p> 
             ): (
-                <div className="flex flex-col items-center gap-8" >
+                <div className="flex flex-col items-center gap-8">
                     {cart.map((item,index)=>(
-                        <div  key={index} className='bg-white flex items-center  w-[55rem]  h-[25rem]  justify-around gap-16   rounded-sm'>
-                            <div className="flex  items-center gap-24 " >
-                                <div className='flex items-center gap-11'>
-                                <img src={item.image} alt={item.name} className="w-[300px] h-auto"/>
-                                <div className='flex flex-col gap-3 '>
+                        <div  key={index} className='bg-white sm:flex sm:flex-row sm:justify-around   sm:items-center sm:w-[55rem]  sm:h-[25rem] sm:gap-16   flex flex-col justify-start items-start h-full w-full rounded-sm'>
+                            <div className="sm:flex sm:flex-row sm:justify-center sm:items-center sm:gap-24  flex flex-col justify-start items-star gap-0  " >
+                                <div className='sm:flex sm:flex-row sm:items-center sm:gap-11 flex flex-col justify-center items-start  gap-0 '>
+                                <img src={item.image} alt={item.name} className="sm:w-[300px] sm:h-auto w-full h-auto "/>
+                                <div className='flex flex-col justify-start items-start gap-3 sm:-mt-[0px] -mt-[110px] sm:ml-0 ml-12'>
                                     <p>{item.name}</p>
                                     
                                     <p> ${item.price}</p>
@@ -85,7 +85,7 @@ const totalSum = totalPrice + vatAmount;
                                 </div>
                                 
                                 
-                                <div className="flex gap-6">
+                                <div className="flex gap-6 mt-7 sm:mt-0 sm:mb-0 mb-12 sm:ml-0 ml-12">
                                 <div className='flex gap-2'>
                                     <button onClick={() => incrementQuantitiy(item.slug)} className='bg-white w-8 h-8 rounded-full  outline outline-1 outline-zinc-600 text-center '> +</button>
                                     {item.quantity}
@@ -104,7 +104,7 @@ const totalSum = totalPrice + vatAmount;
                 </div> 
             )}
 
-            <div className='flex flex-col  w-[22rem] '>
+            <div className='flex flex-col  sm:w-[22rem] w-full sm:mt-0 mt-4 '>
                 
                     <div className='bg-white p-4 rounded flex flex-col items-center gap-5 ' >
                         <h1 className=' -ml-[9.5rem] mt-3 mb-3'>Order summary</h1>
@@ -123,7 +123,7 @@ const totalSum = totalPrice + vatAmount;
                 </div>
                         </div>
  
-<div className='bg-buttonHover w-[16rem] p-3 text-center rounded-sm text-white '>
+<div className='bg-buttonHover sm:w-[16rem] w-full p-3 text-center rounded-sm text-white '>
     <button>Pay</button>
 </div>
                     </div>

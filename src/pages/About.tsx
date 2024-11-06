@@ -75,13 +75,13 @@ const [designers, setDesigners]= useState<Product[]>([]);
 
     return(
         <div className='flex flex-col justify-center  mt-28 mb-72'>
-            <div className='ml-[100px] mb-8'>
+            <div className='ml-[0px] mb-8'>
             <  Breadcrumb  />
             </div>
          
 {aboutContents.map((product)=>(
     <div className='flex flex-col justify-center items-center gap-8 ' key={product.slug}>
-        <p className="w-[800px] text-left font-normal text-balance leading-7 ml-14">{product.description}</p>
+        <p className="sm:w-[800px] sm:text-left font-normal text-balance leading-7 sm:ml-14">{product.description}</p>
         <img src={product.image1} alt={product.name} className='w-[1000px] h-[550px]'/>
     </div>
     
@@ -89,15 +89,15 @@ const [designers, setDesigners]= useState<Product[]>([]);
 
 <div>
     {aboutContents2.map((product)=>(
-        <div  className='flex flex-row justify-center items-center gap-36 mt-20'>
-                  <p className="w-[300px] text-left text-balance font-semibold leading-8 text-lg text-zinc-800">{product.description}</p>
-            <img src={product.image2} alt={product.name} className="w-[400px]"/>
+        <div  className='sm:flex sm:flex-row justify-center items-center sm:gap-36 mt-20 flex  gap-2 '>
+                  <p className="sm:w-[300px] w-[200px] text-left text-balance sm:font-semibold  font-normal sm:leading-8 sm:text-lg text-zinc-800 text-[14.3px] ">{product.description}</p>
+            <img src={product.image2} alt={product.name} className="sm:w-[400px] w-[200px]"/>
         </div>
     ))}
 </div>
 <div>
     {aboutContents3.map((product)=>(
-        <div className='flex justify-center items-center mt-32 gap-10 mb-20'>
+        <div className='sm:flex sm:flex-row justify-center items-center mt-32 gap-10 mb-20 flex flex-col'>
                
                <img src={product.image1} alt={product.name} className="w-[300px] h-[400px]"/>
       
@@ -119,7 +119,7 @@ const [designers, setDesigners]= useState<Product[]>([]);
         {designers.map((product)=>(
             <div  key={product.slug}>
 
-                <div  className='flex flex-row justify-center gap-10 text-center '>
+                <div  className='flex sm:flex-row justify-center gap-10 text-center flex-col'>
                     {product.designers.map((designer,index)=>(
                         <div key={index}>
                          <div className=' flex flex-col justify-center items-center '>

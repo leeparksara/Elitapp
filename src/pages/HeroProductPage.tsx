@@ -66,18 +66,18 @@ const HeroProductPage:React.FC<CartProps>=({addToCart})=>{
     <div className='mt-16' >
        
 {heroProduct.map((saleProduct)=>(
-    <div className='flex justify-center items-center gap-20' key={saleProduct.slug}>
+    <div className='sm:flex justify-center items-center gap-20' key={saleProduct.slug}>
 <div>
-    <div className='bg-white w-[50rem] flex justify-center rounded-md shadow-md'>
+    <div className='bg-white sm:w-[50rem] flex justify-center rounded-md shadow-md'>
     <img className=' ' src={saleProduct.image} alt={saleProduct.name}/>
     </div>
 
-    <div className='flex justify-center items-center gap-4  h-[11rem] mt-3'>
+    <div className='flex justify-center items-center gap-5  h-[11rem] mt-3'>
 
-        <img   className='w-[100px]  cursor-pointer' src={saleProduct.image2} alt={saleProduct.name} onClick={()=> openModal(saleProduct.image2)} />
-        <img  className='w-[100px]  cursor-pointer' src={saleProduct.image3} alt={saleProduct.name} onClick={()=> openModal(saleProduct.image3)}/>
-        <img  className='w-[100px]  cursor-pointer' src={saleProduct.image4} alt={saleProduct.name} onClick={()=> openModal(saleProduct.image4)}/>
-        <img className='w-[100px]  cursor-pointer' src={saleProduct.image5} alt={saleProduct.name} onClick={()=> openModal(saleProduct.image5)}/> 
+        <img   className='sm:w-[110px] w-[80px] cursor-pointer' src={saleProduct.image2} alt={saleProduct.name} onClick={()=> openModal(saleProduct.image2)} />
+        <img  className='sm:w-[110px] w-[80px] cursor-pointer' src={saleProduct.image3} alt={saleProduct.name} onClick={()=> openModal(saleProduct.image3)}/>
+        <img  className='sm:w-[110px] w-[80px] cursor-pointer' src={saleProduct.image4} alt={saleProduct.name} onClick={()=> openModal(saleProduct.image4)}/>
+        <img className='sm:w-[110px] w-[80px] cursor-pointer' src={saleProduct.image5} alt={saleProduct.name} onClick={()=> openModal(saleProduct.image5)}/> 
        
     </div>
 </div>
@@ -89,7 +89,7 @@ const HeroProductPage:React.FC<CartProps>=({addToCart})=>{
     <h2 className='font-medium'>{saleProduct.name}</h2>
     <p className=' w-80'>Carly is a classic chair that adds minimal and luxury touch to your space  </p>
     <div>
-        <button className='bg-cta p-3 w-80 rounded-sm'  onClick={() => addToCart(saleProduct)}> Add to cart</button>
+        <button className='bg-cta p-3 sm:w-80 rounded-sm w-full'  onClick={() => addToCart(saleProduct)}> Add to cart</button>
     </div>
    
 </div>
