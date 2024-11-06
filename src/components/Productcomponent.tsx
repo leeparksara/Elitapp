@@ -66,7 +66,7 @@ const ProductComponent: React.FC<ProductProps> = ({ addToCart }) => {
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-[300px] object-cover cursor-pointer rounded-lg"
+              className="w-full h-[300px] object-cover cursor-pointer rounded-lg p-8 "
               onMouseOver={(e) => {
                 if (product.hoverImage) {
                   (e.currentTarget as HTMLImageElement).src = product.hoverImage;
@@ -79,12 +79,12 @@ const ProductComponent: React.FC<ProductProps> = ({ addToCart }) => {
             <div className="flex justify-between items-center mt-2">
               <p className="ml-2 text-sm sm:text-base"> {product.name}</p>
               <p className="text-sm sm:text-base">${product.price}</p>
-              <div className="flex justify-center items-center w-10 h-10 bg-customBackground rounded-full">
-                <FaCirclePlus
-                  className="text-neutral-800 cursor-pointer"
-                  onClick={() => addToCart(product)}
-                />
-              </div>
+              <div className="flex justify-center items-center w-20 bg-customBackground rounded-tl-full h-14  mr-[-16px] mb-[-17px]">
+                  <FaCirclePlus
+                    className="size-7 ml-2 mt-3 text-neutral-800 cursor-pointer"
+                    onClick={() => addToCart(product)} 
+                  />
+                </div>
             </div>
           </div>
         ))}
