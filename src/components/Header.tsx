@@ -56,7 +56,7 @@ useEffect(()=>{
       categories: item.fields.categories || [],
     }))
     const inspoSection = inspoData.filter( product => 
-      product.categories.includes('insposection')
+      product.categories.includes('Inspiration')
     )
     setInspo(inspoSection);
   })

@@ -10,7 +10,7 @@ interface inspoProduct extends Product{
     inspoImage5:string;
     inspoImage6:string;
 }
-const InspoSection:React.FC =()=>{
+const Inspo:React.FC =()=>{
     const [inspo, setInspo] = useState <inspoProduct[]>([]);
 
 
@@ -32,7 +32,7 @@ const InspoSection:React.FC =()=>{
             categories: item.fields.categories || [],
         }))
         const inspoDataMap = inspoData.filter(product =>
-            product.categories.includes('insposection')
+            product.categories.includes('Inspiration')
         )
         setInspo(inspoDataMap)
     })
@@ -79,4 +79,4 @@ const InspoSection:React.FC =()=>{
     )
 }
 
-export default InspoSection;
+export default Inspo;
