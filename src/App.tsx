@@ -49,7 +49,7 @@ function App() {
   }
   return (
     <Router>
-      <div className="min-h-screen bg-customBackground overflow-x-hidden sm:mb-0 mb-[255px]">
+      <div className="min-h-screen bg-customBackground overflow-x-hidden sm:mb-0 mb-0 ">
         <Routes>
           <Route path="/" element={<Layout products={cartItems} cartValue={cartValue} />}>
             <Route index element={<Home addToCart={addToCart} />} />
