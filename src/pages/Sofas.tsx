@@ -47,7 +47,7 @@ const ChairPage:React.FC<ProductProps> = ({ addToCart }) =>{
    return(
    <>
 
-<div className='pb-4 mt-28' >
+<div className='pb-4 mt-28 overflow-hidden ' >
 
 <div className=" ml-[0px] mb-8">
 <Breadcrumb  />

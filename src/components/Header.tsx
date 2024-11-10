@@ -129,7 +129,7 @@ useEffect(()=>{
        
         <div className=' flex items-center sm:flex sm:items-center sm:gap-2 '>
           <Cart cartValue={cartValue} />
-          <button onClick={toggleMobileMenu} className='text-3xl sm:hidden text-zinc-600'> ☰</button>
+          <button onClick={toggleMobileMenu} className='text-3xl sm:hidden text-zinc-600 mr-3'> ☰</button>
 
         </div>
 

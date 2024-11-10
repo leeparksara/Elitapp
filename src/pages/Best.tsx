@@ -52,14 +52,14 @@ const BestSellerPage: React.FC<ProductProps> = ({ addToCart }) => {
   }, []);
 
   return (
-    <div className="pb-4 mt-28 ">
+    <div className="pb-4 mt-28 overflow-hidden ">
       <div className="ml-[0px] mb-8">
         <Breadcrumb />
       </div>
       <div className="sm:flex justify-center items-center  ">
         <div className="sm:grid sm:grid-cols-3  sm:gap-7 flex flex-col gap-9 ">
           {bestSellerProducts.map((product) => (
-            <div className="bg-neutral-200 rounded-lg w-[400px] cursor-pointer" key={product.slug}>
+            <div className="bg-neutral-200 rounded-lg sm:w-[400px] w-full cursor-pointer" key={product.slug}>
               <img
                 src={product.image}
                 alt={product.name}

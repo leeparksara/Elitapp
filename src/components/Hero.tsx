@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
     <div className="flex flex-col-reverse sm:flex-row-reverse justify-center sm:gap-32 gap-4 items-center overflow-hidden ">
       <div className="flex flex-col items-center relative sm:flex-row sm:items-start ">
         <img src={heroProduct} alt="hero" className="w-full sm:w-auto" />
-        <RiDiscountPercentFill className="absolute text-3xl sm:text-5xl text-neutral-500 top-[340px]  sm:top-16 right-[80px] sm:right-[190px]" />
+        <RiDiscountPercentFill className="absolute text-3xl sm:text-5xl text-neutral-500 top-[330px]  sm:top-16 right-[87px] sm:right-[190px]" />
         <div className="flex flex-col border-solid border-2 border-gray-200 shadow-lg px-5 py-4 relative sm:top-[95px] right-0 sm:right-9 h-32 w-40 items-center">
           <div className="flex flex-col ">
             <h2 className="text-lg sm:text-xl text-neutral-600">Carly chair</h2>
