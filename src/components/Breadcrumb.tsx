@@ -8,7 +8,8 @@ const routeNames :{[key:string]:string} ={
     "/" : "Home",
     "/best": " Best seller",
     "/contact": "Contact",
-    "/cartpage": "Cart"
+    "/cartpage": "Cart",
+    "/Inspo" : "Inspiration",
 }
 
 

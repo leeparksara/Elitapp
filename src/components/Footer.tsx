@@ -8,7 +8,7 @@ import { GrFacebookOption } from "react-icons/gr";
 
 const Footer:React.FC = ()=>{
     return(
-        <div className='w-full  h-full  '>
+        <div className='w-full  h-full  overflow-hidden '>
  <div className='sm:h-[250px] w-full bg-neutral-100 text-zinc-800 sm:grid sm:grid-flow-col  sm:gap-72 sm:items-center    mt-8 grid justify-center items-center'>
 <div className='sm:flex sm:flex-col justify-center items-center'>
     <img src={lamp} alt='lamp' className='size-[150px]' />

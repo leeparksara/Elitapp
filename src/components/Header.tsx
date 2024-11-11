@@ -116,7 +116,7 @@ useEffect(()=>{
  
 </div>
 <div className='flex items-center  -ml-[9px] mt-1 ' >
-<Link to='/InspoSection'> Find inspo </Link>
+<Link to='/Inspo'> Find inspo </Link>
 <span>→</span>
 
 </div>
